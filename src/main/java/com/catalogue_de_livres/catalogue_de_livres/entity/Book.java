@@ -14,8 +14,13 @@ import lombok.Setter;
 @Setter
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private Long id;
+    private String title;
+    private String isbn;
+
+    @ManyToOne
+    private Author author;
 
 }
